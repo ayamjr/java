@@ -1,9 +1,15 @@
-package tn.esprit.gestionzoo.entities;
-import tn.esprit.gestionzoo.main.Zoo;
+package tn.esprit.gestionzoo.main;
+import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Terrestrial;
+import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.entities.Aquatic;
+import tn.esprit.gestionzoo.entities.Dolphin;
+import tn.esprit.gestionzoo.entities.Penguin;
+
 
 public class ZooManagement {
 
-    public static void main(String[] args) {
+    public static <Aquatic> void main(String[] args) {
         Animal lion = new Animal();
         lion.name = "Simba";
         lion.setAge(0);
@@ -13,9 +19,7 @@ public class ZooManagement {
         Zoo myZoo = new Zoo("Wildlife Park", "Ariana");
         new Zoo("WaterPark", "Siliana");
 
-
         Animal dog = new Animal("Canine", "Snoopy", 2, true);
-
 
         System.out.println(myZoo.addAnimal(lion));
         System.out.println(myZoo.addAnimal(dog));
@@ -26,9 +30,7 @@ public class ZooManagement {
         Animal dog2 = new Animal("Canine", "lll", 2, true);
         System.out.println(myZoo.searchAnimal(dog2));
 
-        //   System.out.println(myZoo.removeAnimal(dog));
         myZoo.displayAnimals();
-
 
         System.out.println(myZoo);
 
@@ -43,12 +45,23 @@ public class ZooManagement {
         System.out.println("a" + myZoo.removeAnimal(dog));
         myZoo.displayAnimals();
 
-//        System.out.println(Zoo.comparerZoo(myZoo, notMyZoo));
-//        System.out.println(myZoo.isZooFull());
+        Aquatic aquaticAnimal = new Aquatic("Océan");
+        Terrestrial terrestrial = new Terrestrial(4);
+        Dolphin dolphin = new Dolphin("Océan", 15.0f);
+        Penguin penguin = new Penguin("Pôle Sud", 10.0f);
 
+        System.out.println("Dolphin: " + dolphin.toString());
+        System.out.println("Penguin: " + penguin.toString());
+
+        Aquatic.swim();
+        dolphin.swim();
+        penguin.swim();
     }
+}
+
+
 
 
 
     
-}
+

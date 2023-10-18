@@ -1,7 +1,5 @@
 
-package tn.esprit.gestionzoo.main ;
-
-import tn.esprit.gestionzoo.entities.Animal;
+package tn.esprit.gestionzoo.entities ;
 
 public class Zoo {
 
